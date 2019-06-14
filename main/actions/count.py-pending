@@ -1,0 +1,26 @@
+# coding:utf-8
+
+# Local imports
+from database_base import sqlProgress, sqlLog, sqlBoard
+
+class count:
+	def check(self,action):
+		if "count" in action:
+			if isinstance(action["count"],int):
+				return True
+		return False
+
+	def action(self,teamName,address,action):
+		# Get now step
+		progress = sqlProgress()
+		step = progress.selectNowStep(teamName)
+		del progress
+
+		log = sqlLog()
+		count = log.countStep(teamName,step)
+		del log
+
+		if count < action["count"]:
+			return True,u"Safe"
+		else:
+			return False,u"Over"
