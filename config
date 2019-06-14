@@ -1,0 +1,13 @@
+# Information about the scenario to be executed and action targets
+# NOTE: Paths are relative to the location of 'cyprom.py'
+ScenarioDirectory	../examples/basic_logic
+TargetInformation	../examples/target.ini
+
+# Initial score for each participant
+InitialScore 		0
+
+# Metasploit framework parameters
+MsfServer		127.0.0.1
+MsfPort			12345
+MsfUser			msfuser
+MsfPassword		msfpasswd
