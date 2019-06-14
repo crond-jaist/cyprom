@@ -1,0 +1,3 @@
+PyYAML           # For reading YAML files
+msgpack-python   # For handling binary data serialization
+requests         # For performing HTTP communication
