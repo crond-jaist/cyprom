@@ -1,0 +1,16 @@
+scenario:
+ - step: Action 1 (timer trigger)
+   target: server1
+   trigger:
+    module: timer
+    delay: 5
+   action:
+    module: test
+
+ - step: Action 2 (signal trigger)
+   target: server1
+   trigger:
+    module: signal
+    message: Signal received
+   action:
+    module: test

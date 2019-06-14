@@ -1,0 +1,29 @@
+
+Test Scenario: Action Demo
+--------------------------
+
+This directory is provided for test purposes, and we recommend running
+the included training in order to understand the operation of
+CyPROM. The command to be run is as follows (we assume execution from
+the test scenario directory; program argument paths are relative to
+the 'main/' directory):
+
+  $ ../../main/cyprom.py -s ../examples/action_demo
+
+The training includes one scenario file that demonstrates the use of
+action modules in CYPROM. All the scenario actions have as target the
+machine 'server1'.
+
+The included scenario file is "scenario.yml" with the following
+outline. A message is displayed first, followed by a question. In case
+the question is answered correctly, a final message is shown, and the
+training session ends. Otherwise, an increasing number of hints is
+displayed, so as to enable the participant to answer the question as
+the training session continues.
+
+In order to answer the question without a graphical interface,
+commands such as the ones below can be used:
+
+  $ echo "wrong answer" | nc 127.0.0.1 10000
+  $ echo "wrong answer" | nc 127.0.0.1 10001
+  $ echo "correct answer" | nc 127.0.0.1 10002

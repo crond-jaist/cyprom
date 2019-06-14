@@ -1,0 +1,12 @@
+scenario:
+ - step: Action 1.1
+   target: server1
+   action:
+    module: test
+   failure: COMPLETE
+
+ - step: Action 1.2
+   target: server1
+   action:
+    module: test
+   failure: COMPLETE

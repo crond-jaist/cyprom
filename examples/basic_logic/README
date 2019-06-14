@@ -1,0 +1,35 @@
+
+Test Scenario: Basic Logic
+--------------------------
+
+This directory is provided for test purposes, and we recommend running
+the included training in order to understand the operation of
+CyPROM. The command to be run is as follows (we assume execution from
+the test scenario directory):
+
+  $ ../../main/cyprom.py
+
+NOTE: In case you have changed the default scenario directory in the
+'config' file, use the following command (program argument paths are
+relative to the 'main/' directory):
+
+  $ ../../main/cyprom.py -s ../examples/basic_logic
+
+The training includes two scenario files, and when the activity
+starts, the one called 'scenario.yml' (which is a predefined name)
+will be selected first. The training activity continues until both
+files are completed, according to the branching logic of each
+scenario. All the scenario actions have as target the machine
+'server1', and the specified action module is 'test', which will
+randomly returns SUCCESS or FAILURE.
+
+The included scenario files are:
+
+* scenario.yml: A set of 2 actions with the following branching logic:
+  failure of the either of them leads to completing the training. This
+  logic assumes that both actions are mandatory and must be executed
+  successfully in order for the training to proceed (e.g., some
+  configuration actions).
+
+* scenario2.yml: A set of 3 actions with a similar branching logic
+  to that mentioned above.

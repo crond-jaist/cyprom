@@ -1,0 +1,32 @@
+scenario:
+ - step: Action 1 (message)
+   target: server1
+   action:
+    module: message
+    message: This training consists of a simple quiz.
+
+ - step: Action 2 (question)
+   target: server1
+   action:
+    module: question
+    question:
+      - What is the meaning of XSS?
+      - Please reply with all lower-case letters.
+    answer: cross-site scripting
+   success: Action 4 (message)
+
+ - step: Action 3 (hint)
+   target: server1
+   action:
+    module: hint
+    hint:
+      - "It's something about scripting."
+      - It also has to do with web sites.
+      - '"X" looks somehow like a cross.'
+   success: Action 2 (question)
+
+ - step: Action 4 (message)
+   target: server1
+   action:
+    module: message
+    message: Congratulations for completing the training!

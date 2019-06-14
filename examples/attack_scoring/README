@@ -1,0 +1,41 @@
+
+Test Scenario: Attack Scoring
+-----------------------------
+
+This directory is provided for test purposes, and we recommend running
+the included training in order to understand the operation of
+CyPROM. The command to be run is as follows (we assume execution from
+the test scenario directory; program argument paths are relative to
+the 'main/' directory):
+
+  $ ../../main/cyprom.py -s ../examples/attack_scoring
+
+The training includes two scenario files, and when the activity
+starts, one of them will be selected at random. The training activity
+continues until both files are completed, according to the branching
+logic of each file. All the scenario actions have as target the
+machine 'server1', and the specified action module is 'test', which
+will randomly returns SUCCESS or FAILURE.
+
+The included scenario files are:
+
+* scenario1.yml: A sequence of 2 attacks with the following branching
+  logic: (i) success of both of them leads to preserving the scenario
+  for repeated execution; (ii) failure of either of them leads to
+  finishing the scenario. This logic assumes that the training is done
+  for defense purposes, and if the attacks are successfull the
+  trainees should be given the opportunity to improve their defense
+  strategy.
+
+* scenario2.yml: A set of three attacks with a similar branching logic
+  to that mentioned above.
+
+For each attack, the participants' score is calculated as follows: (i)
+in case of success, points are subtracted from the score (as penalty
+for weak defense); (ii) in case of failure, points are added to it (as
+reward for a good defense strategy). To analyze the performance of
+each participant, we suggest generating the training reports using the
+following command (the CSV file will be written in the 'main/'
+directory, as 'Team A.csv', etc.):
+
+  $ ../../main/cyprom.py --report

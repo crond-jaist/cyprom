@@ -1,0 +1,21 @@
+scenario:
+ - step: Attack 1.1
+   target: server1
+   action:
+    module: test
+   success:
+    points: -100
+   failure:
+    points: 200
+    next: FINISH
+
+ - step: Attack 1.2
+   target: server1
+   action:
+    module: test
+   success:
+    points: -50
+    next: REPEAT
+   failure:
+    points: 100
+    next: FINISH

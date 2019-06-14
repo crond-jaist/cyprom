@@ -1,0 +1,31 @@
+
+Test Scenario: Trigger Demo
+---------------------------
+
+This directory is provided for test purposes, and we recommend running
+the included training in order to understand the operation of
+CyPROM. The command to be run is as follows (we assume execution from
+the test scenario directory; program argument paths are relative to
+the 'main/' directory):
+
+  $ ../../main/cyprom.py -s ../examples/test_triggers
+
+The training includes one scenario file that demonstrates the use of
+trigger modules in CYPROM. The training activity continues linearly
+until the file is completed. All the scenario actions have as target
+the machine 'server1', and the specified action module is 'test',
+which will randomly returns SUCCESS or FAILURE.
+
+The included scenario file is "scenario.yml" with the following
+outline. A sequence of 2 actions is executed one after the other: (i)
+the first action has a delayed execution by using the 'timer' trigger;
+(ii) the second action execution is controlled externally via the
+'signal' trigger.
+
+In order to unblock the second action execution without a graphical
+interface, commands such as the ones below can be used (the message
+content is irrelevant in this case):
+
+  $ echo "SIGNAL" | nc 127.0.0.1 10000
+  $ echo "SIGNAL" | nc 127.0.0.1 10001
+  $ echo "SIGNAL" | nc 127.0.0.1 10002
