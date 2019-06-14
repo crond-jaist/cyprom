@@ -47,7 +47,7 @@ run. We provide the list of requirements in a file that can be used to
 install the included packages via the following command from the
 `cyprom/` directory:
 
-`$ sudo pip install -r requirements.txt`
+`$ sudo -H pip install -r requirements.txt`
 
 Although the default settings should work fine in most case, before
 using CyPROM for the first time, we suggest that you check the content
@@ -62,11 +62,8 @@ command:
 
 `$ ./cyprom.py`
 
-This will execute a basic training scenario that uses only harmless
-test actions to emulate a training activity. Some warnings regarding
-the unavailability of the HTTP service may be displayed, as the IP
-address of the action target server in the target information file
-`examples/target.ini` is the loopback address.
+This will execute a basic training scenario that emulates a sample
+training activity with two scenarios using only harmless test actions.
 
 To get used to the training scenario representation syntax, we suggest
 examining the examples provided in the directory `examples/`, and also
