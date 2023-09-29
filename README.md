@@ -1,3 +1,8 @@
+## Important Notice
+
+### The CROND NEC-endowed chair at JAIST that has developed CyPROM originally ceased to exist in March 2021, and future development will be carried out by the Cybersecurity Lab at JAIST in the new repository [CyPROM](https://github.com/cyb3rlab/CyPROM). The original CyPROM version will not be receiving any future updates, so please switch over to the new CyPROM version as soon as you are able to do so.
+
+
 # CyPROM: Scenario Progression Management for Cybersecurity Training
 
 CyPROM is a scenario progression management system that was created
